@@ -1,385 +1,373 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: white;
     margin: 0;
-    -ms-user-select: none; 
-    -moz-user-select: none; 
-    -webkit-user-select: none; 
-    user-select: none; 
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     overflow-x: hidden;
-    font-family: Geologica, sans-serif;
-}
-
-a {
-    text-decoration: none;
-}
-
-header {
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 70px;
-    border: 0.5px solid rgb(222, 222, 222);
-    position: relative;
-}
-
-.hedt {
-    font-family: Geologica;
-    color: rgb(55, 134, 204);
-    font-size: 22px;
-    margin-top: 25px;
-    margin-left: 10px;
-}
-
-.profile {
-    margin-top: 45px;
-    text-align: center;
-    width: 35%;
-    max-width: 150px;
-}
-
-.nick {
-    font-family: Geologica;
-    color: rgb(55, 134, 204); 
-}
-
-.info {
-    font-family: Geologica;
-    color: rgb(74, 74, 74);
-    font-size: 18px;
-}
-
-.news {
-    font-family: Geologica;
-    color: rgb(55, 134, 204);
-    font-size: 34px;
-}
-
-.infnew {
-    font-family: Geologica;
-    color: rgb(55, 134, 204);
-    margin-left: 5vw;
-}
-
-.infon {
-    font-family: Geologica;
-    color: rgb(74, 74, 74);
-    font-size: 16px;
-    margin-left: 5vw;
-    margin-top: -5px;
-}
-
-.prich {
-    font-family: Geologica;
-    color: rgb(55, 134, 204);  
-    margin-top: 50px;
-    font-size: 34px;
-}
-
-.top {
-    font-family: Geologica;
-    color: rgb(55, 134, 204);  
-}
-
-.inftop {
-    font-family: Geologica;
-    color: rgb(74, 74, 74);
-}
-
-.hi,
-.pepe,
-.money {
-    max-width: 100%;
-    width: 500px;
-    height: auto;
-    display: block;
-}
-
-footer {
-    width: 100%;
-    height: 100px;
-    margin-top: 80px;
-    font-family: Geologica;
-    color: grey;
-    border: 0.5px solid rgb(222, 222, 222);
+    font-family: 'Geologica', sans-serif;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
-/* Контейнер для контента */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
+    padding: 0 20px;
 }
 
-/* Мобильные устройства (до 767px) */
-@media screen and (max-width: 767px) {
-    .flex {
-        flex-direction: column;
-        align-items: center;
+.text-center {
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    border-bottom: 0.5px solid white; /* Белый бордер */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.hedt {
+    color: rgb(55, 134, 204);
+    font-size: clamp(20px, 5vw, 24px);
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 30px 0;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid rgb(55, 134, 204);
+}
+
+.profile-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.nick {
+    color: rgb(55, 134, 204);
+    font-size: clamp(28px, 6vw, 36px);
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.info {
+    color: rgb(74, 74, 74);
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 1.5;
+}
+
+/* News Section */
+.news {
+    color: rgb(55, 134, 204);
+    font-size: clamp(28px, 6vw, 36px);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.news-item {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+    border: 1px solid white; /* Белый бордер */
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.news-image-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.news-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.infnew {
+    color: rgb(55, 134, 204);
+    font-size: clamp(20px, 4vw, 24px);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.infon {
+    color: rgb(74, 74, 74);
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 1.6;
+}
+
+/* Reasons Section */
+.prich {
+    color: rgb(55, 134, 204);
+    font-size: clamp(28px, 6vw, 36px);
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.reason-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid white; /* Белый бордер */
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.reason-image-container {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 20px;
+}
+
+.reason-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.top {
+    color: rgb(55, 134, 204);
+    font-size: clamp(20px, 4vw, 22px);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.inftop {
+    color: rgb(74, 74, 74);
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    border-top: 0.5px solid white; /* Белый бордер */
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    color: grey;
+    font-size: clamp(14px, 2.5vw, 16px);
+    line-height: 1.6;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 30px;
     }
     
-    .mgn1, .mgn2 {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .reasons-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .news-item, .reason-card {
+        padding: 30px;
     }
     
     .profile {
-        width: 100%;
-        max-width: 200px;
-        margin: 30px auto;
-    }
-    
-    .news {
-        font-size: 28px;
-        text-align: center;
-        margin: 20px 0;
-    }
-    
-    .infnew, .infon {
-        margin-left: 0;
-        text-align: center;
-        padding: 0 15px;
-    }
-    
-    .infnew {
-        font-size: 20px;
-    }
-    
-    .infon {
-        font-size: 16px;
-    }
-    
-    .prich {
-        font-size: 28px;
-        text-align: center;
-        margin-top: 40px;
-    }
-    
-    .top {
-        font-size: 20px;
-        text-align: center;
-    }
-    
-    .inftop {
-        font-size: 16px;
-        text-align: center;
-        padding: 0 15px;
-    }
-    
-    .hi, .pepe, .money {
-        width: 100%;
-        max-width: 400px;
-        margin: 20px auto;
-        display: block;
-    }
-    
-    .flex2 {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 0 !important;
+        width: 180px;
+        height: 180px;
     }
 }
 
-/* Планшеты (768px - 1023px) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* Desktop Styles */
+@media (min-width: 1024px) {
     .container {
-        max-width: 720px;
+        padding: 0 40px;
     }
     
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .mgn1 {
-        width: 40%;
-        text-align: center;
-    }
-    
-    .mgn2 {
-        width: 60%;
-    }
-    
-    .news {
-        font-size: 30px;
-    }
-    
-    .infnew {
-        font-size: 18px;
-        margin-left: 20px;
-    }
-    
-    .infon {
-        font-size: 16px;
-        margin-left: 20px;
-    }
-    
-    .flex2 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        margin-left: 0;
-    }
-    
-    .hi, .pepe, .money {
-        width: 300px;
-        height: auto;
-    }
-}
-
-/* Десктопы (1024px и выше) */
-@media screen and (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-        padding: 0 20px;
-    }
-    
-    .flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    
-    .mgn1 {
-        width: 25%;
-        text-align: center;
-    }
-    
-    .mgn2 {
-        width: 70%;
-    }
-    
-    .news {
-        font-size: 34px;
-    }
-    
-    .news1, .news2 {
-        margin-left: 0;
-    }
-    
-    .infnew {
-        font-size: 20px;
-        margin-left: 0;
-    }
-    
-    .infon {
-        font-size: 17px;
-        margin-left: 0;
-    }
-    
-    .flex2 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 0;
+    .news-grid {
         gap: 40px;
     }
     
+    .reasons-grid {
+        gap: 40px;
+    }
+    
+    .profile {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .news {
+        font-size: 40px;
+    }
+    
     .prich {
-        text-align: center;
-    }
-    
-    .top {
-        font-size: 20px;
-    }
-    
-    .inftop {
-        font-size: 17px;
-    }
-    
-    .hi, .pepe, .money {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        transition: transform 0.3s ease;
-    }
-    
-    .hi:hover, .pepe:hover, .money:hover {
-        transform: scale(1.02);
+        font-size: 40px;
     }
 }
 
-/* Большие экраны (1440px и выше) */
-@media screen and (min-width: 1440px) {
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
     .container {
         max-width: 1400px;
     }
     
-    .mgn1 {
-        width: 20%;
+    .news-grid {
+        gap: 50px;
     }
     
-    .mgn2 {
-        width: 75%;
-    }
-    
-    .news {
-        font-size: 36px;
-    }
-    
-    .infnew {
-        font-size: 22px;
-    }
-    
-    .infon {
-        font-size: 18px;
-    }
-    
-    .hi, .pepe, .money {
-        max-width: 400px;
+    .reasons-grid {
+        gap: 50px;
     }
 }
 
-/* Ховер-эффекты только для устройств с курсором */
-@media (hover: hover) and (pointer: fine) {
-    a:hover {
-        opacity: 0.8;
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    .profile-section {
+        margin-bottom: 50px;
     }
     
-    .hi:hover, .pepe:hover, .money:hover {
-        transform: scale(1.03);
+    .news-item, .reason-card {
+        padding: 20px;
     }
-}
-
-/* Улучшение для очень маленьких экранов */
-@media screen and (max-width: 374px) {
+    
     .news {
-        font-size: 24px;
+        margin-bottom: 30px;
     }
     
     .prich {
+        margin-bottom: 30px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 374px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .profile {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .nick {
         font-size: 24px;
     }
     
-    .hedt {
-        font-size: 20px;
-    }
-    
     .info {
-        font-size: 16px;
+        font-size: 14px;
     }
     
-    .infnew {
+    .news, .prich {
+        font-size: 24px;
+    }
+    
+    .infnew, .top {
         font-size: 18px;
     }
     
-    .infon {
+    .infon, .inftop {
         font-size: 14px;
     }
 }
 
-/* Фикс для footer на мобильных */
-@media screen and (max-width: 767px) {
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .profile, .news-image, .reason-image {
+        filter: grayscale(100%);
+    }
+    
     footer {
-        height: auto;
-        min-height: 100px;
-        padding: 20px 15px;
-        text-align: center;
+        border: none;
     }
 }
