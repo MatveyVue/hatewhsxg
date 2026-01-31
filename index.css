@@ -6,6 +6,7 @@ body {
     -webkit-user-select: none; 
     user-select: none; 
     overflow-x: hidden;
+    font-family: Geologica, sans-serif;
 }
 
 a {
@@ -17,6 +18,7 @@ header {
     width: 100%;
     height: 70px;
     border: 0.5px solid rgb(222, 222, 222);
+    position: relative;
 }
 
 .hedt {
@@ -51,7 +53,6 @@ header {
     font-size: 34px;
 }
 
-
 .infnew {
     font-family: Geologica;
     color: rgb(55, 134, 204);
@@ -83,16 +84,13 @@ header {
     color: rgb(74, 74, 74);
 }
 
-.hi {
-    max-width: 500px;
-}
-
-.pepe {
-    max-width: 500px;
-}
-
+.hi,
+.pepe,
 .money {
-    max-width: 500px;
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    display: block;
 }
 
 footer {
@@ -102,198 +100,286 @@ footer {
     font-family: Geologica;
     color: grey;
     border: 0.5px solid rgb(222, 222, 222);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media screen and (min-width: 1px) and (max-width: 525px) {
-    .mgn1 {
-        text-align: center;
+/* Контейнер для контента */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Мобильные устройства (до 767px) */
+@media screen and (max-width: 767px) {
+    .flex {
+        flex-direction: column;
+        align-items: center;
     }
-    .mgn2 {
+    
+    .mgn1, .mgn2 {
+        width: 100%;
         text-align: center;
+        margin-bottom: 30px;
     }
-    .news2 {
+    
+    .profile {
+        width: 100%;
+        max-width: 200px;
+        margin: 30px auto;
+    }
+    
+    .news {
+        font-size: 28px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .infnew, .infon {
+        margin-left: 0;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .infnew {
+        font-size: 20px;
+    }
+    
+    .infon {
+        font-size: 16px;
+    }
+    
+    .prich {
+        font-size: 28px;
+        text-align: center;
         margin-top: 40px;
     }
-} 
-
-@media screen and (min-width: 526px) and (max-width: 600px) {
+    
+    .top {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .inftop {
+        font-size: 16px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .hi, .pepe, .money {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+        display: block;
+    }
+    
     .flex2 {
-        margin-left: 40px;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0 !important;
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 650px) {
+/* Планшеты (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .mgn1 {
+        width: 40%;
+        text-align: center;
+    }
+    
+    .mgn2 {
+        width: 60%;
+    }
+    
+    .news {
+        font-size: 30px;
+    }
+    
+    .infnew {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+    
+    .infon {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+    
     .flex2 {
-        margin-left: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-left: 0;
+    }
+    
+    .hi, .pepe, .money {
+        width: 300px;
+        height: auto;
     }
 }
 
-@media screen and (min-width: 651px) and (max-width: 700px) {
+/* Десктопы (1024px и выше) */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+    
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .mgn1 {
+        width: 25%;
+        text-align: center;
+    }
+    
+    .mgn2 {
+        width: 70%;
+    }
+    
+    .news {
+        font-size: 34px;
+    }
+    
+    .news1, .news2 {
+        margin-left: 0;
+    }
+    
+    .infnew {
+        font-size: 20px;
+        margin-left: 0;
+    }
+    
+    .infon {
+        font-size: 17px;
+        margin-left: 0;
+    }
+    
     .flex2 {
-        margin-left: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0;
+        gap: 40px;
+    }
+    
+    .prich {
+        text-align: center;
+    }
+    
+    .top {
+        font-size: 20px;
+    }
+    
+    .inftop {
+        font-size: 17px;
+    }
+    
+    .hi, .pepe, .money {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+    
+    .hi:hover, .pepe:hover, .money:hover {
+        transform: scale(1.02);
     }
 }
 
-@media screen and (min-width: 780px) and (max-width: 1589px) {
-    .flex {
-        display: flex;
+/* Большие экраны (1440px и выше) */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
     }
+    
+    .mgn1 {
+        width: 20%;
+    }
+    
     .mgn2 {
         width: 75%;
     }
-    .news1 {
-        margin-left: 10vw;
+    
+    .news {
+        font-size: 36px;
     }
-    .news2 {
-        margin-left: 12vw;
-    }
+    
     .infnew {
-        margin-left: 5px;
-        font-size: 1.5vw;
+        font-size: 22px;
     }
+    
     .infon {
-        margin-left: 5px;
-        font-size: 1.3vw;
+        font-size: 18px;
     }
-    .flex2 {
-        display: flex;
-        margin-left: 7%;
+    
+    .hi, .pepe, .money {
+        max-width: 400px;
     }
-    .top {
-        font-size: 1.5vw;
-    }
-    .inftop {
-        font-size: 1.3vw;
-    }
-    .hi {
-        margin-top: 10px;
-        float: left;
-        margin-left: -80px;
-    }
-    .pepe {
-        float: right;
-    }
-} 
+}
 
-@media screen and (min-width: 1590px) and (max-width: 1680px) {
-    .flex {
-        display: flex;
+/* Ховер-эффекты только для устройств с курсором */
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        opacity: 0.8;
     }
-    .mgn2 {
-        width: 75%;
+    
+    .hi:hover, .pepe:hover, .money:hover {
+        transform: scale(1.03);
     }
-    .news1 {
-        margin-left: 10vw;
-    }
-    .news2 {
-        margin-left: 12vw;
-    }
-    .infnew {
-        margin-left: 5px;
-        font-size: 1.5vw;
-    }
-    .infon {
-        margin-left: 5px;
-        font-size: 1.3vw;
-    }
-    .flex2 {
-        display: flex;
-        margin-left: 7%;
-    }
-    .top {
-        font-size: 1.5vw;
-    }
-    .inftop {
-        font-size: 1.3vw;
-    }
-    .hi {
-        margin-top: 10px;
-        float: left;
-        margin-left: -50px;
-    }
-    .pepe {
-        float: right;
-    }
-} 
+}
 
-@media screen and (min-width: 1681px) and (max-width: 2500px) {
-    .flex {
-        display: flex;
+/* Улучшение для очень маленьких экранов */
+@media screen and (max-width: 374px) {
+    .news {
+        font-size: 24px;
     }
-    .mgn2 {
-        width: 75%;
+    
+    .prich {
+        font-size: 24px;
     }
-    .news1 {
-        margin-left: 10vw;
+    
+    .hedt {
+        font-size: 20px;
     }
-    .news2 {
-        margin-left: 12vw;
+    
+    .info {
+        font-size: 16px;
     }
+    
     .infnew {
-        margin-left: 5px;
-        font-size: 1.5vw;
+        font-size: 18px;
     }
+    
     .infon {
-        margin-left: 5px;
-        font-size: 1.3vw;
+        font-size: 14px;
     }
-    .flex2 {
-        display: flex;
-        margin-left: 7%;
-    }
-    .top {
-        font-size: 1.5vw;
-    }
-    .inftop {
-        font-size: 1.3vw;
-    }
-    .hi {
-        margin-top: 10px;
-        float: left;
-        margin-left: -15px;
-    }
-    .pepe {
-        float: right;
-    }
-} 
+}
 
-@media screen and (min-width: 1900px) and (max-width: 2500px) {
-    .flex {
-        display: flex;
+/* Фикс для footer на мобильных */
+@media screen and (max-width: 767px) {
+    footer {
+        height: auto;
+        min-height: 100px;
+        padding: 20px 15px;
+        text-align: center;
     }
-    .mgn2 {
-        width: 75%;
-    }
-    .news1 {
-        margin-left: 10vw;
-    }
-    .news2 {
-        margin-left: 12vw;
-    }
-    .infnew {
-        margin-left: 5px;
-        font-size: 1.5vw;
-    }
-    .infon {
-        margin-left: 5px;
-        font-size: 1.3vw;
-    }
-    .flex2 {
-        display: flex;
-        margin-left: 7%;
-    }
-    .top {
-        font-size: 1.5vw;
-    }
-    .inftop {
-        font-size: 1.3vw;
-    }
-    .hi {
-        margin-top: 10px;
-        float: left;
-        margin-left: 60px;
-    }
-    .pepe {
-        float: right;
-    }
-} 
+}
